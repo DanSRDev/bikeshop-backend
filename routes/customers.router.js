@@ -1,10 +1,13 @@
 const express = require('express');
+const CustomerService = require('../services/customer.service')
 
 const router = express.Router();
+const service = new CustomerService();
 
 router.get('/', async (req, res, next) => {
   try {
-    res.json('customer');
+    const customers = await service.find();
+    res.json(customers);
   } catch (error) {
     next(error);
   }
@@ -12,7 +15,9 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    res.json('customer');
+    const { id } = req.params;
+    const customer = await service.findOne(id);
+    res.json(customer);
   } catch (error) {
     next(error);
   }
@@ -20,7 +25,9 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    res.json('customer');
+    const body = req.body;
+    const newCustomer = await service.create(body);
+    res.json(newCustomer);
   } catch (error) {
     next(error);
   }
@@ -28,7 +35,10 @@ router.post('/', async (req, res, next) => {
 
 router.patch('/:id', async (req, res, next) => {
   try {
-    res.json('customer');
+    const { id } = req.params;
+    const body = req.body;
+    const customer = await service.update(id, body);
+    res.json(customer);
   } catch (error) {
     next(error);
   }
@@ -36,7 +46,9 @@ router.patch('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    res.json('customer');
+    const { id } = req.params;
+    const rta = await service.delete(id);
+    res.json(rta);
   } catch (error) {
     next(error);
   }
