@@ -28,7 +28,7 @@ const updateSaleSchema = Joi.object({
 });
 
 const addItemSchema = Joi.object({
-  id: id.required(),
+  saleId: id.required(),
   productId: productId.required(),
   amount: amount.required()
 })

@@ -22,6 +22,13 @@ class SaleService {
     return newsale;
   }
 
+  async addItem(data) {
+    const { saleId } = data;
+    await this.findOne(saleId);
+    const newItem = {saleId};
+    return newItem;
+  }
+
   async update(id, changes) {
     const sale = await this.findOne(id);
     const rta = {sale, ...changes};
