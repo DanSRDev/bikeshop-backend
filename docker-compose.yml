@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:13
     environment:
-      - POSTGRES_DB=my_store
+      - POSTGRES_DB=bikeshop
       - POSTGRES_USER=daniel
       - POSTGRES_PASSWORD=admin123
     ports:
