@@ -22,7 +22,7 @@ const SaleProductSchema = {
     field: 'sale_id',
     references: {
       model: SALE_TABLE,
-      key: 'id'
+      key: 'sale_id'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
@@ -33,7 +33,7 @@ const SaleProductSchema = {
     field: 'product_id',
     references: {
       model: PRODUCT_TABLE,
-      key: 'id'
+      key: 'product_id'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'

@@ -35,7 +35,7 @@ const ProductSchema = {
     field: 'category_id',
     references: {
       model: CATEGORY_TABLE,
-      key: 'id'
+      key: 'category_id'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
@@ -46,7 +46,7 @@ const ProductSchema = {
     field: 'supplier_id',
     references: {
       model: SUPPLIER_TABLE,
-      key: 'id'
+      key: 'supplier_id'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'

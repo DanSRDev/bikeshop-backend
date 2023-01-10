@@ -10,6 +10,6 @@ const options = {
 
 const sequelize = new Sequelize(config.dbUrl, options);
 
-setupModels(sequelize)
+setupModels(sequelize);
 
 module.exports = sequelize;

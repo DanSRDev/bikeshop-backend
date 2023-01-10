@@ -23,22 +23,22 @@ const SaleSchema = {
   },
   userDni: {
     allowNull: false,
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     field: 'user_dni',
     references: {
       model: USER_TABLE,
-      key: 'dni'
+      key: 'user_dni'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
   },
   customerDni: {
     allowNull: false,
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     field: 'customer_dni',
     references: {
       model: CUSTOMER_TABLE,
-      key: 'dni'
+      key: 'customer_dni'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'

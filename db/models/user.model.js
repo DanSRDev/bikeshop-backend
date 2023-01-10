@@ -39,7 +39,7 @@ const UserSchema = {
     field: 'role_id',
     references: {
       model: ROLE_TABLE,
-      key: 'id'
+      key: 'role_id'
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
