@@ -3,8 +3,8 @@ const Joi = require('joi');
 const id = Joi.number().integer();
 const date = Joi.date();
 const total = Joi.number();
-const dniUser = Joi.number().integer();
-const dniCustomer = Joi.number().integer();
+const dniUser = Joi.string().length(8);
+const dniCustomer = Joi.string().length(8);
 const productId = Joi.number().integer();
 const amount = Joi.number().min(1);
 

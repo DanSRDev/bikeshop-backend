@@ -16,12 +16,12 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id',
+router.get('/:dni',
   validatorHandler(getCustomerSchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
-      const customer = await service.findOne(id);
+      const { dni } = req.params;
+      const customer = await service.findOne(dni);
       res.json(customer);
     } catch (error) {
       next(error);
@@ -42,14 +42,14 @@ router.post('/',
   }
 );
 
-router.patch('/:id',
+router.patch('/:dni',
   validatorHandler(getCustomerSchema, 'params'),
   validatorHandler(updateCustomerSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
+      const { dni } = req.params;
       const body = req.body;
-      const customer = await service.update(id, body);
+      const customer = await service.update(dni, body);
       res.json(customer);
     } catch (error) {
       next(error);
@@ -57,12 +57,12 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
+router.delete('/:dni',
   validatorHandler(getCustomerSchema, 'params'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
-      const rta = await service.delete(id);
+      const { dni } = req.params;
+      const rta = await service.delete(dni);
       res.json(rta);
     } catch (error) {
       next(error);

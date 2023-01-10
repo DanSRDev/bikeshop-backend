@@ -1,9 +1,9 @@
 const Joi = require('joi');
 
-const dni = Joi.number().integer();
+const dni = Joi.string().length(8);
 const lastName = Joi.string().max(30);
 const firstName = Joi.string().max(30);
-const ruc = Joi.number().integer();
+const ruc = Joi.string().length(11);
 
 const getCustomerSchema = Joi.object({
   dni: dni.required()
@@ -12,7 +12,7 @@ const getCustomerSchema = Joi.object({
 const createCustomerSchema = Joi.object({
   lastName: lastName.required(),
   firstName: firstName.required(),
-  ruc: ruc.required()
+  ruc: ruc
 });
 
 const updateCustomerSchema = Joi.object({

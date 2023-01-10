@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const dni = Joi.number().integer();
+const dni = Joi.string().length(8);
 const lastName = Joi.string().max(30);
 const firstName = Joi.string().max(30);
 const username = Joi.string().max(30);

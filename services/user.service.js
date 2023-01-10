@@ -9,8 +9,8 @@ class UserService {
     return users;
   }
 
-  async findOne(id) {
-    const user = {id};
+  async findOne(dni) {
+    const user = {dni};
     if (!user) {
       throw boom.notFound('user not found');
     }
@@ -22,16 +22,16 @@ class UserService {
     return newUser;
   }
 
-  async update(id, changes) {
-    const user = await this.findOne(id);
+  async update(dni, changes) {
+    const user = await this.findOne(dni);
     const rta = {user, ...changes};
     return rta;
   }
 
-  async delete(id) {
-    const user = await this.findOne(id);
+  async delete(dni) {
+    const user = await this.findOne(dni);
     await user;
-    return { id };
+    return { dni };
   }
 }
 

@@ -9,8 +9,8 @@ class CustomerService {
     return customers;
   }
 
-  async findOne(id) {
-    const customer = {id};
+  async findOne(dni) {
+    const customer = {dni};
     if (!customer) {
       throw boom.notFound('customer not found');
     }
@@ -22,16 +22,16 @@ class CustomerService {
     return newCustomer;
   }
 
-  async update(id, changes) {
-    const customer = await this.findOne(id);
+  async update(dni, changes) {
+    const customer = await this.findOne(dni);
     const rta = {customer, ...changes};
     return rta;
   }
 
-  async delete(id) {
-    const customer = await this.findOne(id);
+  async delete(dni) {
+    const customer = await this.findOne(dni);
     await customer;
-    return { id };
+    return { dni };
   }
 }
 
