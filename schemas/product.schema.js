@@ -30,6 +30,6 @@ const updateProductSchema = Joi.object({
 const queryProductSchema = Joi.object({
   limit: limit,
   offset: offset
-})
+});
 
 module.exports = { getProductSchema, createProductSchema, updateProductSchema, queryProductSchema };
