@@ -6,6 +6,9 @@ const description = Joi.string();
 const stock = Joi.number().integer();
 const price = Joi.number();
 
+const limit = Joi.number().integer();
+const offset = Joi.number().integer();
+
 const getProductSchema = Joi.object({
   id: id.required()
 });
@@ -24,4 +27,9 @@ const updateProductSchema = Joi.object({
   price: price
 });
 
-module.exports = { getProductSchema, createProductSchema, updateProductSchema };
+const queryProductSchema = Joi.object({
+  limit: limit,
+  offset: offset
+})
+
+module.exports = { getProductSchema, createProductSchema, updateProductSchema, queryProductSchema };

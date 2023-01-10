@@ -12,6 +12,7 @@ const getUserSchema = Joi.object({
 });
 
 const createUserSchema = Joi.object({
+  dni: dni.required(),
   lastName: lastName.required(),
   firstName: firstName.required(),
   username: username.required(),

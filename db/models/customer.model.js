@@ -20,7 +20,7 @@ const CustomerSchema = {
     field: 'customer_first_name'
   },
   ruc: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING,
     field: 'customer_ruc'
   }
