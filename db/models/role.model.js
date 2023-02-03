@@ -12,6 +12,7 @@ const RoleSchema = {
   },
   name: {
     allowNull: false,
+    unique: true,
     type: DataTypes.STRING,
     field: 'role_name'
   }

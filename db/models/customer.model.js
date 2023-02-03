@@ -21,6 +21,7 @@ const CustomerSchema = {
   },
   ruc: {
     allowNull: true,
+    unique: true,
     type: DataTypes.STRING,
     field: 'customer_ruc'
   }

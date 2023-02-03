@@ -21,7 +21,7 @@ class RoleService {
   }
 
   async create(data) {
-    const newRole = await models.create(data);
+    const newRole = await models.Role.create(data);
     return newRole;
   }
 

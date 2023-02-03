@@ -14,6 +14,7 @@ const ProductSchema = {
   },
   name: {
     allowNull: false,
+    unique: true,
     type: DataTypes.STRING,
     field: 'product_name'
   },

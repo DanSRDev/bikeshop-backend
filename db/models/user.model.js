@@ -22,6 +22,7 @@ const UserSchema = {
   },
   username: {
     allowNull: false,
+    unique: true,
     type: DataTypes.STRING
   },
   password: {
@@ -53,7 +54,7 @@ class User extends Model {
       as: 'role'
     });
     this.hasMany(models.Sale, {
-      as: 'sales',
+      as: 'salesByUser',
       foreignKey: 'userDni'
     });
   };

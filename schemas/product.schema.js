@@ -1,10 +1,13 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const name = Joi.string().max(30);
+const name = Joi.string().max(50);
 const description = Joi.string();
 const stock = Joi.number().integer();
 const price = Joi.number();
+
+const categoryId = Joi.number().integer();
+const supplierId = Joi.number().integer();
 
 const limit = Joi.number().integer();
 const offset = Joi.number().integer();
@@ -17,14 +20,18 @@ const createProductSchema = Joi.object({
   name: name.required(),
   description: description.required(),
   stock: stock.required(),
-  price: price.required()
+  price: price.required(),
+  categoryId: categoryId.required(),
+  supplierId: supplierId.required()
 });
 
 const updateProductSchema = Joi.object({
   name: name,
   description: description,
   stock: stock,
-  price: price
+  price: price,
+  categoryId: categoryId,
+  supplierId: supplierId
 });
 
 const queryProductSchema = Joi.object({

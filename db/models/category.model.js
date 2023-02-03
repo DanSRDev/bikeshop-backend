@@ -12,6 +12,7 @@ const CategorySchema = {
   },
   name: {
     allowNull: false,
+    unique: true,
     type: DataTypes.STRING,
     field: 'category_name'
   }

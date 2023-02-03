@@ -12,6 +12,7 @@ const SupplierSchema = {
   },
   name: {
     allowNull: false,
+    unique: true,
     type: DataTypes.STRING,
     field: 'supplier_name'
   },

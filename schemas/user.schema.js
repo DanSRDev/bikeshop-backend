@@ -7,6 +7,8 @@ const username = Joi.string().max(30);
 const password = Joi.string().max(30);
 const sales = Joi.number().integer();
 
+const roleId = Joi.number().integer();
+
 const getUserSchema = Joi.object({
   dni: dni.required()
 });
@@ -17,7 +19,8 @@ const createUserSchema = Joi.object({
   firstName: firstName.required(),
   username: username.required(),
   password: password.required(),
-  sales: sales.required()
+  sales: sales,
+  roleId: roleId.required()
 });
 
 const updateUserSchema = Joi.object({
@@ -25,7 +28,8 @@ const updateUserSchema = Joi.object({
   firstName: firstName,
   username: username,
   password: password,
-  sales: sales
+  sales: sales,
+  roleId: roleId
 });
 
 module.exports = { getUserSchema, createUserSchema, updateUserSchema };

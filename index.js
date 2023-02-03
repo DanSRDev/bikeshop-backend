@@ -6,11 +6,11 @@ const routerApi = require('./routes');
 const { logErrors, boomErrorHandler, errorHandler, ormErrorHandler } = require('./middlewares/error.handler');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(express.json());
 
-const whitelist = ['http://127.0.0.1:5500'];
+const whitelist = ['http://127.0.0.1:5500', 'http://localhost:3000'];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin) {

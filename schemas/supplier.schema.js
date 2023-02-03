@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const name = Joi.string().max(30);
+const name = Joi.string().max(50);
 const phone = Joi.string();
 
 const getSupplierSchema = Joi.object({

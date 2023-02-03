@@ -19,7 +19,8 @@ const SaleSchema = {
   },
   total: {
     allowNull: false,
-    type: DataTypes.FLOAT
+    type: DataTypes.FLOAT,
+    defaultValue: 0
   },
   userDni: {
     allowNull: false,
