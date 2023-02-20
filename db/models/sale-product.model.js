@@ -25,7 +25,7 @@ const SaleProductSchema = {
       key: 'sale_id'
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onDelete: 'CASCADE'
   },
   productId: {
     allowNull: false,
@@ -36,7 +36,7 @@ const SaleProductSchema = {
       key: 'product_id'
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
+    onDelete: 'CASCADE'
   }
 }
 

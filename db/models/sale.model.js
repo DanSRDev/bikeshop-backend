@@ -17,11 +17,6 @@ const SaleSchema = {
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW
   },
-  total: {
-    allowNull: false,
-    type: DataTypes.FLOAT,
-    defaultValue: 0
-  },
   userDni: {
     allowNull: false,
     type: DataTypes.STRING,

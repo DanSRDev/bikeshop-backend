@@ -2,7 +2,6 @@ const Joi = require('joi');
 
 const id = Joi.number().integer();
 const date = Joi.date();
-const total = Joi.number();
 
 const userDni = Joi.string().length(8);
 const customerDni = Joi.string().length(8);
@@ -16,14 +15,12 @@ const getSaleSchema = Joi.object({
 
 const createSaleSchema = Joi.object({
   date: date,
-  total: total,
   userDni: userDni.required(),
   customerDni: customerDni.required()
 });
 
 const updateSaleSchema = Joi.object({
   date: date,
-  total: total,
   userDni: userDni,
   customerDni: customerDni
 });
