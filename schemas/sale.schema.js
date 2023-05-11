@@ -25,10 +25,19 @@ const updateSaleSchema = Joi.object({
   customerDni: customerDni
 });
 
+const getItemSchema = Joi.object({
+  id: id.required()
+});
+
 const addItemSchema = Joi.object({
   saleId: id.required(),
   productId: productId.required(),
   amount: amount.required()
 });
 
-module.exports = { getSaleSchema, createSaleSchema, updateSaleSchema, addItemSchema };
+const updateItemSchema = Joi.object({
+  productId: productId,
+  amount: amount
+});
+
+module.exports = { getSaleSchema, createSaleSchema, updateSaleSchema, getItemSchema, addItemSchema, updateItemSchema };
