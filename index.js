@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
-const whitelist = ['http://127.0.0.1:5500', 'http://localhost:3000'];
+const whitelist = process.env.WHITELIST.split(',');
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin) {
